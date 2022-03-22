@@ -30,6 +30,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <h1>PokeSearch Bar</h1>
       <form onSubmit={handleSubmit}>
         <label>
           <input
@@ -39,23 +40,39 @@ const App = () => {
           />
         </label>
       </form>
+      <br />
 
       {pokemonData.map((data) => {
         return (
           <div className="container">
             <img src={data.sprites["front_default"]} />
+            <br />
 
-            <div className="box">Type</div>
-            <div className="box">{pokemonType}</div>
+            <div className="box">
+              <b> Type </b>
 
-            <div className="box">Height</div>
-            <div className="box"> {Math.round(data.height * 3.9)}"</div>
-
-            <div className="box">Weight</div>
-            <div className="box"> {Math.round(data.weight / 4.3)} lbs</div>
-
-            <div className="box">Number of Battles</div>
-            <div className="box">{data.game_indices.length}</div>
+              <div>
+                <p>{pokemonType}</p>
+              </div>
+            </div>
+            <div className="box">
+              <b> Height </b>
+              <div>
+                <p>{Math.round(data.height * 3.9)}</p>
+              </div>
+            </div>
+            <div className="box">
+              <b> Weight</b>
+              <div>
+                <p> {Math.round(data.weight / 4.3)} lbs</p>
+              </div>
+            </div>
+            <div className="box">
+              <b> Number of Battles</b>
+              <div>
+                <p>{data.game_indices.length}</p>
+              </div>
+            </div>
           </div>
         );
       })}
