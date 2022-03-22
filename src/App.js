@@ -45,7 +45,7 @@ const App = () => {
       {pokemonData.map((data) => {
         return (
           <div className="container">
-            <img src={data.sprites["front_default"]} />
+            <img src={data.sprites["front_default"]} alt="img" />
             <br />
 
             <div className="box">
